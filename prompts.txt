@@ -1,0 +1,291 @@
+STUDENT FEEDBACK MANAGEMENT SYSTEM
+AI DEVELOPMENT PROMPTS
+
+The quoted text below comes from the development conversation. Sections follow the requested project phases. Where there was no standalone prompt for a phase, that is stated explicitly; no prompts or test results have been invented.
+
+1. REQUIREMENT ANALYSIS
+
+You are an experienced Python full-stack developer.
+
+I want to develop a Student Feedback Management System as part of an AI-assisted software engineering assessment.
+
+First, analyze the project requirements.
+
+Objective:
+Build a simple web application that allows students to submit course feedback and allows administrators to view and analyze feedback.
+
+Mandatory technology stack:
+
+- Python
+- Streamlit
+- SQLite
+- Python Virtual Environment
+- Git
+
+Mandatory functional requirements:
+
+1. Submit Feedback:
+
+- Student Name
+- Course Name
+- Rating (1–5)
+- Comments
+
+2. View Feedback Records:
+
+- Display all submitted feedback in a table.
+
+3. Average Rating:
+
+- Calculate the overall average rating.
+
+4. Highest Rated Course:
+
+- Identify the course with the highest average rating.
+
+5. Course-wise Rating Summary:
+
+- Display each course's total feedback and average rating.
+
+Database requirements:
+
+- Database: feedback.db
+- Table: feedback
+- Columns: feedback_id, student_name, course_name, rating, comments.
+
+Do not start coding yet. Provide a clear requirement analysis, proposed application structure, and implementation plan.
+
+2. DATABASE DESIGN
+
+Now design the SQLite database for the Student Feedback Management System.
+
+Requirements:
+
+1. Create a database named feedback.db.
+2. Create a table named feedback.
+3. Include these columns:
+
+- feedback_id INTEGER PRIMARY KEY AUTOINCREMENT
+- student_name TEXT NOT NULL
+- course_name TEXT NOT NULL
+- rating INTEGER NOT NULL with a CHECK constraint between 1 and 5
+- comments TEXT
+
+Create a separate Python file named database.py.
+
+Implement these functions:
+
+- create_table()
+- add_feedback(student_name, course_name, rating, comments)
+- get_all_feedback()
+- get_average_rating()
+- get_highest_rated_course()
+- get_course_summary()
+Use sqlite3, parameterized SQL queries, proper connection handling, and commit changes when inserting records.
+
+Keep the code simple and beginner-friendly.
+
+Create the actual database.py file and explain how to execute it.
+
+3. PYTHON VIRTUAL ENVIRONMENT SETUP
+
+No standalone prompt asked for a separate virtual-environment setup step. The actual requirement from the initial prompt was:
+
+Mandatory technology stack:
+
+- Python
+- Streamlit
+- SQLite
+- Python Virtual Environment
+- Git
+
+4. STREAMLIT APPLICATION DEVELOPMENT
+
+Now create the main Streamlit application for my Student Feedback Management System.
+
+Create a Python file named app.py in the current Assessment project folder.
+
+IMPORTANT:
+
+- Use the existing database.py file.
+- Do not recreate or overwrite the database.py file.
+- Use the existing SQLite database feedback.db.
+- Import and reuse the six database functions already implemented.
+
+APPLICATION DESIGN:
+
+Create a modern, professional and responsive college feedback management dashboard.
+
+Use a green, white and light grey theme.
+
+Add a sidebar navigation with four sections:
+
+1. DASHBOARD
+
+- Display total number of feedback submissions.
+- Display overall average rating out of 5.
+- Display the highest-rated course.
+- Display total number of courses.
+- Use Streamlit metric cards.
+
+1. SUBMIT FEEDBACK
+Create a feedback form with:
+
+- Student Name: text input.
+- Course Name: dropdown containing Python, Java, C Programming, Data Structures and Database Management Systems.
+- Rating: selection from 1 to 5.
+- Comments: text area.
+- Submit Feedback button.
+Validate the inputs and save feedback using the add_feedback() function.
+
+Display a success message after submission.
+
+1. VIEW FEEDBACK
+
+- Retrieve all feedback using get_all_feedback().
+- Display feedback_id, student_name, course_name, rating and comments.
+- Use st.dataframe().
+- Add a course filter if practical.
+
+1. ANALYTICS
+
+- Display overall average rating.
+- Display highest-rated course.
+- Show all tied highest-rated courses if there is a tie.
+- Display course-wise total feedback and average rating.
+- Include a bar chart comparing average course ratings.
+
+TECHNICAL REQUIREMENTS:
+
+- Use Python and Streamlit.
+- Use the existing SQLite database functions.
+- Do not hardcode statistics.
+- Handle an empty database gracefully.
+- Refresh dashboard statistics after feedback submission.
+- Keep the code simple, readable and beginner-friendly.
+- Avoid unnecessary authentication and additional features.
+Create the actual app.py file.
+
+After creating it, explain the code and tell me exactly how to run the application.
+
+5. USER INTERFACE IMPROVEMENT
+
+Improve the existing Student Feedback Management System UI.
+
+I noticed two issues:
+
+1. Sidebar navigation text has very low contrast and is difficult to read.
+2. Dashboard metric cards are too narrow, causing labels and values to be truncated.
+
+Fix these issues.
+
+Requirements:
+
+- Use dark green or dark grey sidebar text.
+- Maintain the green, white and light grey theme.
+- Make dashboard metric cards wider and properly spaced.
+- Ensure all metric labels and values are fully visible.
+- Improve readability and responsive layout.
+- Keep all four navigation sections.
+- Do not modify database.py or overwrite feedback.db.
+- Do not remove or change any existing functionality.
+Modify only app.py and verify the application still works.
+
+6. APPLICATION TESTING AND DEBUGGING
+
+No standalone testing-only prompt was used. The exact verification instruction in the UI improvement request was:
+
+Modify only app.py and verify the application still works.
+
+The Analytics Improvement request also included this verification instruction:
+
+After making the changes, verify that the application runs successfully and explain what you changed.
+
+Actual follow-up prompts after Analytics were:
+
+does it complete
+
+give me link to open
+
+The subsequent header-contrast prompt was:
+
+why the header is dar,correct it
+
+7. ANALYTICS IMPROVEMENT
+
+Improve the Analytics section of my existing Student Feedback Management System.
+
+Make only the following two changes:
+
+1. Add a Total Feedback Submissions metric card.
+
+- Calculate the total number of feedback records directly from the SQLite database.
+- Display the count prominently on the Analytics page.
+- Update automatically when new feedback is submitted.
+2. Change the existing average-rating bar chart from vertical to horizontal.
+
+- Display course names clearly on the Y-axis.
+- Display average ratings on the X-axis.
+- Keep the rating scale between 0 and 5.
+- Make long course names readable.
+- Keep the existing green theme.
+IMPORTANT:
+
+- Modify only app.py.
+- Do not modify database.py.
+- Do not overwrite or delete feedback.db.
+- Do not change the existing database records.
+- Do not remove any of the five mandatory features.
+- Keep the existing Dashboard, Submit Feedback, View Feedback and Analytics navigation.
+- Use actual database values, not hardcoded numbers.
+After making the changes, verify that the application runs successfully and explain what you changed.
+
+8. README DOCUMENTATION
+
+The initial README request was:
+
+create a readme file
+
+The later README improvement request was:
+
+Review and improve the existing README.md file for my Student Feedback Management System.
+
+Keep all the existing accurate information and add the following sections:
+
+1. Project Objective
+2. Technologies Used:
+
+- Python
+- Streamlit
+- SQLite
+- Git
+3. Database Structure:
+Explain the feedback table and its columns:
+feedback_id, student_name, course_name, rating and comments.
+4. Complete Project Folder Structure.
+5. Installation of Dependencies using requirements.txt.
+6. Testing:
+Explain the testing of feedback submission, feedback retrieval, average rating, highest-rated course and course-wise rating summary.
+7. Git and GitHub:
+Briefly explain version control and repository submission.
+Also:
+
+- Keep Windows PowerShell instructions.
+- Include virtual environment activation.
+- Use python -m pip install -r requirements.txt.
+- Keep streamlit run app.py as the application launch command.
+- Use proper Markdown headings, code blocks and lists.
+- Keep the documentation beginner-friendly and professional.
+- Do not invent test results.
+- Do not modify app.py, database.py or feedback.db.
+Update the existing README.md file only.
+
+The later GitHub follow-up was:
+
+add this in my github
+
+9. FINAL APPLICATION VERIFICATION
+
+No separate final-verification prompt was issued after the documentation and GitHub follow-up. The actual verification instruction was part of the Analytics Improvement prompt in section 7:
+
+After making the changes, verify that the application runs successfully and explain what you changed.
